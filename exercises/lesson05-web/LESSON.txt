@@ -1,0 +1,17 @@
+In this task you only need to fetch API Keys and URLs from Firebase and add them to scripts.js.
+
+1. Open scripts.js in your favourite editor.
+2. Fill out these properties:
+var config = {
+		  apiKey: "",
+		  authDomain: "",
+		  databaseURL: ""
+		};
+
+API key is Web API key found in Firebase --> Gear icon --> Project Settings
+AuthDomain is the same URL used as firebase Host in lesson04
+databaseURL is the same URL as above, but with https:// in front.
+
+3. For ease, we allow everyone and everything to read values from our database. Go to Database-->Rules and change ".read": "auth != null" to ".read": true
+
+4. Save and open index.html in your Browser. 
