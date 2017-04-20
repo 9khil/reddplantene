@@ -8,6 +8,8 @@ STEPS
 4. Using Arduino Studio, go to Tools - Library Manager - Manage Libraries
 5. Install Blynk library (newest version)
 6. Using Android Studio:
+	Create a NEW project (do not base this project on the previous code base you created in the course)
+
 	Include libraries, enable serial logging and define your Auth token:
 		#define BLYNK_PRINT Serial
 		#include <ESP8266WiFi.h>
