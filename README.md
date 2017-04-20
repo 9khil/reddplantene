@@ -15,12 +15,12 @@ IoT kurs med introduksjon til ESP8266, Sparkfun Datastreams (Phant), Blynk og fu
 
 # Kursholdere
 
-Nikhil André Luthra
-Martin Gravråk
-Daniel Holmen
-Alexander Perry
-Erik Sogge
-Magnus Green
+- Nikhil André Luthra
+- Martin Gravråk
+- Daniel Holmen
+- Alexander Perry
+- Erik Sogge
+- Magnus Green
 
 # Credits
 
