@@ -1,4 +1,4 @@
-This is an BONUS EXERCICE if you have spare time at the end of the course.
+This is a BONUS EXERCICE if you have spare time at the end of the course.
 
 This lesson shows you an alternative way to retrieve data from your IoT-device, and how to control it from your mobile phone. Create a NEW PROJECT before starting this lesson (do not base this lesson on your previous lessons in this course)
 
@@ -24,8 +24,8 @@ STEPS
 		
 	In the loop function, execute blynk	
 		Blynk.run();
-7. TASK: Try to retrieve the in the blynk App on your mobile phone
-8. TASK: Try to blink the LED on the IoT-thing using your mobile phone (tip, pin D4)
+7. TASK: Try to retrieve the moisture value using Blynk
+8. TASK: Try to blink the LED on the IoT-thing using Blynk (tip: pin D4)
 
 
 
