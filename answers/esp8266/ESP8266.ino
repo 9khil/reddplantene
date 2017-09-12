@@ -13,7 +13,7 @@ const char PublicKey[] = "";
 const char PrivateKey[] = "";
 
 WiFiClient client;
-const int httpPort = 80;
+const int httpPort = 8090;
 
 #define MOISTURE_PIN A0
 
