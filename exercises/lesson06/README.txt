@@ -7,9 +7,9 @@ STEPS
 1. Download Blynk App on your mobile phone
 2. Using the Blynk app, register an account and create a new project. Select Device "Wemos D1 mini" and connection type "Wifi"
 3. Retrieve app key sent to your email address used to register account.
-4. Using Arduino Studio, go to Tools - Library Manager - Manage Libraries
+4. Using Arduino IDE, go to Tools - Library Manager - Manage Libraries
 5. Install Blynk library (newest version)
-6. Using Arduino Studio:
+6. Using Arduino IDE:
 	Create a NEW project (do not base this project on the previous code base you created in the course)
 
 	Include libraries, enable serial logging and define your Auth token:
