@@ -1,25 +1,37 @@
-#include <ESP8266WiFi.h>
+#define MOISTURE_PIN A0
+#define MOISTURE_POWER_PIN D7
 
-// Fyll ut med SSID og passord
-#define WIFI_SSID ""
-#define WIFI_PASSWORD ""
+int sensorValue = 0;
 
 void setup() {
   Serial.begin(115200);
 
-  Serial.println("");
-  Serial.print("Connecting to: ");
-  Serial.println(WIFI_SSID);
+   pinMode(MOISTURE_PIN, INPUT);
 
-  // Oppgave: Start tilkobling til trådløst nettverk med ssid og password
+   pinMode(MOISTURE_POWER_PIN, OUTPUT);
+  
+  //Oppgave: Sett MOISTURE_POWER_PIN til LOW ved oppstart.
+  
+  
 
-  // Oppgave: Skriv ut "." hvert 0.5 sekund fram til vi er tilkoblet
+  delay(300);
 
-  Serial.println("Connected!");
-  Serial.println("IP address: ");
-
-  // Oppgave: Skriv ut IP-adresse
+  
 }
 
 void loop() {
+
+  //Oppgave: Slå på sensoren
+
+  //Oppgave: Etter du har slått på sensoren venter du 300 ms før du leser av verdien.
+  
+  sensorValue = analogRead(MOISTURE_PIN);
+  
+  //Oppgave: slå av sensoren igjen
+  
+  
+
+  Serial.print("Moisture: ");
+  Serial.println(sensorValue);
+  delay(2000);
 }

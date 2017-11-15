@@ -14,12 +14,16 @@ WiFiClient client;
 const int httpPort = 8090;
 
 #define MOISTURE_PIN A0
+#define MOISTURE_POWER_PIN D7
 
 int sensorValue = 0;
 
 void setup() {
   Serial.begin(115200);
-  pinMode(A0, INPUT);
+  pinMode(MOISTURE_PIN, INPUT);
+  
+  pinMode(MOISTURE_POWER_PIN, OUTPUT);
+  digitalWrite(MOISTURE_POWER_PIN, LOW);
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("connecting");
@@ -34,7 +38,14 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(MOISTURE_POWER_PIN, HIGH);
+  delay(300);
+  
   sensorValue = analogRead(MOISTURE_PIN);
+  
+  delay(100);
+  digitalWrite(MOISTURE_POWER_PIN, LOW);
+  
 
   // Oppgave: Deklarer et Phantobjekt
   
