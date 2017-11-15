@@ -6,7 +6,7 @@
 #define WIFI_PASSWORD ""
 
 // Fyll ut phanthost, publickey og privatekey
-const char PhantHost[] = "phant.labben.org";
+const char PhantHost[] = "phant.labben.org"; //Get your public and private key by visiting http://phant.labben.org:8090
 const char PublicKey[] = "";
 const char PrivateKey[] = "";
 
