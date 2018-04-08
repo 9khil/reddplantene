@@ -1,6 +1,8 @@
 # reddplantene
 IoT kurs med introduksjon til ESP8266, Sparkfun Datastreams (Phant) og fuktighetssensor.
 
+Hvis du har moistboard v1.x må du bruke koden fra release v1.0. Koden i masterbranchen er for moistboard v2.x.
+
 
 # Agenda
 - Lodding
