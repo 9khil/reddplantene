@@ -5,7 +5,7 @@ void setup() {
   Serial.begin(115200);
 
   // Sett A0 i inputmodus
-  pinMode(A0, INPUT);
+  pinMode(MOISTURE_PIN, INPUT);
 }
 
 void loop() {
