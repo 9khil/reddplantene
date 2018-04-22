@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 
-// Fyll ut med SSID og passord
+// Fyll ut med navnet på WIFIen og passord
 #define WIFI_SSID ""
 #define WIFI_PASSWORD ""
 

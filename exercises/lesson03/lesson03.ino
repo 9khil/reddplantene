@@ -9,27 +9,27 @@ void setup() {
    pinMode(MOISTURE_PIN, INPUT);
 
    pinMode(MOISTURE_POWER_PIN, OUTPUT);
-  
-  //Oppgave: Sett MOISTURE_POWER_PIN til LOW ved oppstart.
-  
-  
+
+   digitalWrite(MOISTURE_POWER_PIN, LOW);
+
+
 
   delay(300);
 
-  
+
 }
 
 void loop() {
 
-  //Oppgave: Slå på sensoren
+  //Oppgave: Slå på sensoren ved å sette moisture power pin til HIGH.
 
   //Oppgave: Etter du har slått på sensoren venter du 300 ms før du leser av verdien.
-  
+
   sensorValue = analogRead(MOISTURE_PIN);
-  
+
   //Oppgave: slå av sensoren igjen
-  
-  
+
+
 
   Serial.print("Moisture: ");
   Serial.println(sensorValue);

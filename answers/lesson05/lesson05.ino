@@ -20,9 +20,9 @@ int sensorValue = 0;
 
 void setup() {
   Serial.begin(115200);
-  
+
   pinMode(MOISTURE_PIN, INPUT);
-  
+
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
   digitalWrite(MOISTURE_POWER_PIN, LOW);
 
@@ -41,9 +41,9 @@ void setup() {
 void loop() {
   digitalWrite(MOISTURE_POWER_PIN, HIGH);
   delay(300);
-  
+
   sensorValue = analogRead(MOISTURE_PIN);
-  
+
   delay(100);
   digitalWrite(MOISTURE_POWER_PIN, LOW);
 
@@ -54,7 +54,7 @@ void loop() {
   phant.add("moisture", sensorValue);
 
   // Oppgave: koble til Phantserveren. Skriv ut feilmelding om tilkobling mislyktes
-  if (!client.connect(PhantHost, httpPort)) 
+  if (!client.connect(PhantHost, httpPort))
   {
     // If we fail to connect, return 0.
     Serial.println("Error connecting to Phant.");
