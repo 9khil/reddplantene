@@ -3,6 +3,8 @@ IoT kurs med introduksjon til ESP8266, Sparkfun Datastreams (Phant) og fuktighet
 
 Hvis du har moistboard v1.x må du bruke koden fra release v1.0. Koden i masterbranchen er for moistboard v2.x.
 
+# Upcoming changes
+- Phant has reached end of life :/ Will replace with Adafruit IO or something like that.
 
 # Agenda
 - Lodding
