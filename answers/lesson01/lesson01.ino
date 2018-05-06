@@ -1,3 +1,8 @@
+/* Redd Plantene
+ * @author: Nikhil André Luthra - Bouvet Norge
+ * @web: reddplantene.labben.org / bouvet.no/reddplantene
+ * @web: bouvet.no / nikhil.luthra.no
+ */
 void setup() {
   // Initialiser serieport på 115200 bps
   Serial.begin(115200);

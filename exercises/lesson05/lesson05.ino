@@ -1,3 +1,8 @@
+/* Redd Plantene
+ * @author: Nikhil André Luthra - Bouvet Norge
+ * @web: reddplantene.labben.org / bouvet.no/reddplantene
+ * @web: bouvet.no / nikhil.luthra.no
+ */
 #include <ESP8266WiFi.h>
 #include <Phant.h>
 

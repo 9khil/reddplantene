@@ -1,3 +1,8 @@
+/* Redd Plantene
+ * @author: Nikhil André Luthra - Bouvet Norge
+ * @web: reddplantene.labben.org / bouvet.no/reddplantene
+ * @web: bouvet.no / nikhil.luthra.no
+ */
 #define MOISTURE_PIN A0
 #define MOISTURE_POWER_PIN D7
 #define LED_PIN D2
