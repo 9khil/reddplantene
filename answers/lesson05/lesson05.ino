@@ -12,8 +12,8 @@
 
 // Fyll ut phanthost, publickey og privatekey
 const char PhantHost[] = "phant.labben.org";
-const char PublicKey[] = "";
-const char PrivateKey[] = "";
+const char publicKey[] = "";
+const char privateKey[] = "";
 
 WiFiClient client;
 const int httpPort = 8090;
@@ -53,7 +53,7 @@ void loop() {
   digitalWrite(MOISTURE_POWER_PIN, LOW);
 
   // Oppgave: Deklarer et Phantobjekt
-  Phant phant(PhantHost, PublicKey, PrivateKey);
+  Phant phant(PhantHost, publicKey, privateKey);
 
   // Oppgave: legg til sensorverdien i Phantobjektet. Husk å bruke samme nøkkel som når du opprettet phant-stream
   phant.add("moisture", sensorValue);

@@ -12,8 +12,8 @@
 
 // Fyll ut phanthost, publickey og privatekey
 const char PhantHost[] = "phant.labben.org"; //Get your public and private key by visiting http://phant.labben.org:8090
-const char PublicKey[] = "";
-const char PrivateKey[] = "";
+const char publicKey[] = "";
+const char privateKey[] = "";
 
 WiFiClient client;
 const int httpPort = 8090;
