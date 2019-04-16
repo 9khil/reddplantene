@@ -1,8 +1,11 @@
 var valueElement;
 var gauge;
 
-//Oppgave 1: Legg inn URL til json-data feeden i ajax-kallet.
-//Oppgave 2: Definer grenseverdier for våt, fuktig og tørr utifra hva din sensor leser inn. Gjør dette i displayValue
+// Exercise 1: Add the url to the JSON data feed in the AJAX call.
+// Oppgave 1: Legg inn URL til json-data feeden i ajax-kallet.
+
+// Exercise 2: Define the limits for wet, moist, and dry depending on what your sensor reads. Change this in displayValue
+// Oppgave 2: Definer grenseverdier for våt, fuktig og tørr utifra hva din sensor leser inn. Gjør dette i displayValue
 
 
 $(document).ready(function(){
@@ -40,12 +43,12 @@ $(document).ready(function(){
 	function displayValue(value){
 
 			if(value > 350){
-				valueElement.innerHTML = "våt";
+				valueElement.innerHTML = "wet";
 			}
 			else if(value <= 350 && value > 150){
-				valueElement.innerHTML = "fuktig";
+				valueElement.innerHTML = "moist";
 			}else if(value <= 150){
-				valueElement.innerHTML = "tørr";
+				valueElement.innerHTML = "dry";
 			}
 
 			updateGauge(value);

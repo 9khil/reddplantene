@@ -1,1 +1,2 @@
+Read the instructions in the script.js file.
 Les instruksjoner i script.js filen.

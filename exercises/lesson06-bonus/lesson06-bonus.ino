@@ -11,7 +11,8 @@
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
-/*Oppgave: installer biblioteket til BlynkSimpleEsp8266.h*/
+/* Oppgave: installer biblioteket til BlynkSimpleEsp8266.h */
+/* Execise: Install the library for BlynkSimpleEsp8266. */
 
 
 char auth[] = "";
@@ -51,12 +52,13 @@ void setup()
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
   
   digitalWrite(MOISTURE_POWER_PIN, LOW);
-  
-  //Oppgave: kjør begin på Blynk-objektet, med auth, ssid og pass som argument
+
+  // Exercise: Run begin on the Blynk object, with auth, ssid, and pass as arguments
+  // Oppgave: kjør begin på Blynk-objektet, med auth, ssid og pass som argument
 
   
-  
-  //Oppgave: opprett en timer som blir kalt hvert sekund.
+  // Exercise: Add a timer that is called every second
+  // Oppgave: opprett en timer som blir kalt hvert sekund
   
 }
 
@@ -67,4 +69,3 @@ void loop()
 
 
 }
-
