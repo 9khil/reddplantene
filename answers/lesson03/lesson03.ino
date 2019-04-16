@@ -3,49 +3,34 @@
  * @web: reddplantene.labben.org / bouvet.no/reddplantene
  * @web: bouvet.no / nikhil.luthra.no
  */
-#define MOISTURE_PIN A0
-#define MOISTURE_POWER_PIN D7
-#define LED_PIN D2
+#include <ESP8266WiFi.h>
 
-int sensorValue = 0;
+// Fyll ut med SSID og passord
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 
 void setup() {
   Serial.begin(115200);
 
-  // Sett MOISTURE_PIN i inputmodus
-  pinMode(MOISTURE_PIN, INPUT);
+  Serial.println("");
+  Serial.print("Connecting to: ");
+  Serial.println(WIFI_SSID);
 
-  pinMode(MOISTURE_POWER_PIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
-  
-  // Sett MOISTURE_POWER_PIN til LOW ved oppstart.
-  digitalWrite(MOISTURE_POWER_PIN, LOW);
-   digitalWrite(LED_PIN, LOW);
+  // Start tilkobling til trådløst nettverk med ssid og password
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
-  delay(300);
+  // Skriv ut "." hvert 0.5 sekund fram til vi er tilkoblet
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("Connected!");
+  Serial.println("IP address: ");
+
+  // Skriv ut IP-adresse
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
- 
-  // Slå på sensoren
-  digitalWrite(LED_PIN, HIGH);
-  digitalWrite(MOISTURE_POWER_PIN, HIGH);
-  
-  
-  //Etter du har slått på sensoren venter du 300 ms før du leser av verdien.
-  delay(300);
-  sensorValue = analogRead(MOISTURE_PIN);
-
-  //slå av sensoren igjen
-  delay(100);
-  digitalWrite(MOISTURE_POWER_PIN, LOW);
-  digitalWrite(LED_PIN, LOW);
-
-  Serial.print("Moisture: ");
-
-  // Skriv ut fuktighet til serieport
-  Serial.println(sensorValue);
-
-  // Vent 2 sekunder
-  delay(2000);
 }
