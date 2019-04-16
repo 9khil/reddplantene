@@ -6,11 +6,13 @@
 #include <ESP8266WiFi.h>
 #include <Phant.h>
 
+// Enter SSID and password
 // Fyll ut med SSID og passord
 #define WIFI_SSID ""
 #define WIFI_PASSWORD ""
 
-// Fyll ut phanthost, publickey og privatekey
+// Enter public key and private key
+// Fyll ut publickey og privatekey
 const char PhantHost[] = "phant.labben.org";
 const char publicKey[] = "";
 const char privateKey[] = "";
@@ -52,20 +54,24 @@ void loop() {
   delay(100);
   digitalWrite(MOISTURE_POWER_PIN, LOW);
 
-  // Oppgave: Deklarer et Phantobjekt
+  // Declare a Phant object
+  // Deklarer et Phantobjekt
   Phant phant(PhantHost, publicKey, privateKey);
 
-  // Oppgave: legg til sensorverdien i Phantobjektet. Husk å bruke samme nøkkel som når du opprettet phant-stream
+  // Add the sensor value to the Phant Object. Remember to use the same key as when you created the Phant stream
+  // Legg til sensorverdien i Phantobjektet. Husk å bruke samme nøkkel som når du opprettet phant-stream
   phant.add("moisture", sensorValue);
 
-  // Oppgave: koble til Phantserveren. Skriv ut feilmelding om tilkobling mislyktes
+  // Connect to the Phant server. Print a error message if the connection fails
+  // koble til Phantserveren. Skriv ut feilmelding om tilkobling mislyktes
   if (!client.connect(PhantHost, httpPort)) 
   {
-    // If we fail to connect, return 0.
+    // If we fail to connect, return 0
     Serial.println("Error connecting to Phant.");
   }
 
-  // Oppgave: Post data til Phant serveren
+  // Post data to the Phant server
+  // Post data til Phant serveren
   client.print(phant.post());
 
   delay(15000);
