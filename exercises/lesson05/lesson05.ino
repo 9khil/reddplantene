@@ -5,8 +5,8 @@
 #define WIFI_SSID ""
 #define WIFI_PASSWORD ""
 
-// Fyll ut phanthost, publickey og privatekey
-const char PhantHost[] = "phant.labben.org"; //Get your public and private key by visiting http://phant.labben.org:8090
+//1.  Fyll ut phanthost, publickey og privatekey. Du finner disse verdiene ved å registrere deg her: http://phant.labben.org:8090
+const char PhantHost[] = "phant.labben.org";
 const char PublicKey[] = "";
 const char PrivateKey[] = "";
 
@@ -38,17 +38,22 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(MOISTURE_POWER_PIN, HIGH);
+  
+  //2. Lim inn kode for å slå på sensoren:
+  
   delay(300);
 
-  sensorValue = analogRead(MOISTURE_PIN);
+  //3. Lim inn kode for å lese data fra sensoren:
+  
 
   delay(100);
-  digitalWrite(MOISTURE_POWER_PIN, LOW);
+
+  //4. Lim inn kode for å slå av sensoren:
+
 
   Phant phant(PhantHost, PublicKey, PrivateKey);
 
-  phant.add("moisture", sensorValue);
+  //5. Lim inn kode for å sende data til internett:
 
   if (!client.connect(PhantHost, httpPort))
   {
