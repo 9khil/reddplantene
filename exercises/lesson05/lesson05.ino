@@ -7,8 +7,8 @@
 
 //1.  Fyll ut phanthost, publickey og privatekey. Du finner disse verdiene ved å registrere deg her: http://phant.labben.org:8090
 const char PhantHost[] = "phant.labben.org";
-const char PublicKey[] = "";
-const char PrivateKey[] = "";
+const char publicKey[] = "";
+const char privateKey[] = "";
 
 WiFiClient client;
 const int httpPort = 8090;
@@ -51,7 +51,7 @@ void loop() {
   //4. Lim inn kode for å slå av sensoren:
 
 
-  Phant phant(PhantHost, PublicKey, PrivateKey);
+  Phant phant(PhantHost, publicKey, privateKey);
 
   //5. Lim inn kode for å sende data til internett:
 
