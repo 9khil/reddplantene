@@ -1,5 +1,6 @@
+#include <Arduino.h>
 /* Redd Plantene
- * @author: Nikhil André Luthra - Bouvet Norge
+ * @author: Nikhil André Luthra/Jesper Andersson - Bouvet Norge
  * @web: reddplantene.labben.org / bouvet.no/reddplantene
  * @web: bouvet.no / nikhil.luthra.no
  */
@@ -15,6 +16,7 @@ void setup() {
   pinMode(MOISTURE_PIN, INPUT);
 
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 
   // Sett MOISTURE_POWER_PIN til HIGH for å sende strøm til sensoren.
   digitalWrite(MOISTURE_POWER_PIN, HIGH);
@@ -23,10 +25,10 @@ void setup() {
 }
 
 void loop() {
-
   // Les av fuktighet
   sensorValue = analogRead(MOISTURE_PIN);
 
+  digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
   Serial.print("Moisture: ");
 
   // Skriv ut fuktighet til serieport
