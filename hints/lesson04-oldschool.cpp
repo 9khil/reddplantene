@@ -1,5 +1,6 @@
+#include <Arduino.h>
 /* Redd Plantene
- * @author: Nikhil André Luthra - Bouvet Norge
+ * @author: Nikhil André Luthra/Jesper Andersson - Bouvet Norge
  * @web: reddplantene.labben.org / bouvet.no/reddplantene
  * @web: bouvet.no / nikhil.luthra.no
  */
@@ -11,6 +12,8 @@
 
 void setup() {
   Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
 
   Serial.println("");
   Serial.print("Connecting to: ");
@@ -24,13 +27,23 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("Connected!");
+    Serial.print("IP address: ");
 
-  Serial.println("Connected!");
-  Serial.println("IP address: ");
+    // Skriv ut IP-adresse
+    Serial.println(WiFi.localIP());
 
-  // Skriv ut IP-adresse
-  Serial.println(WiFi.localIP());
+  }
+  else {
+    Serial.println("Connection failed.");
+    delay(5000);
+    setup();
+  }
 }
 
 void loop() {
+  digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+  delay(300);
 }
