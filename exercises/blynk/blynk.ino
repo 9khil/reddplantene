@@ -1,5 +1,3 @@
-#include <WiFiManager.h>
-
 /* Comment this out to disable prints and save space */
 #define BLYNK_PRINT Serial
 #define MOISTURE_PIN A0
@@ -14,7 +12,6 @@ char auth[] = "";
 // Set password to "" for open networks.
 char ssid[] = "";
 char pass[] = "";
-char const *nameYourDevice = "MinRPDevice";
 
 BlynkTimer timer;
 int sensorValue = 0;
@@ -42,33 +39,15 @@ void setup()
 {
   // Debug console
   Serial.begin(115200);
-  WiFiManager wm;
-
-  bool res;
-  res = wm.autoConnect(nameYourDevice);
-
-  if(!res) {
-        Serial.println("Failed to connect");
-        // ESP.restart();
-    } 
-    else {
-        //if you get here you have connected to the WiFi    
-        Serial.println("connected...yeey :)");
-
-        pinMode(MOISTURE_PIN, INPUT);
-        pinMode(MOISTURE_POWER_PIN, OUTPUT);
-        
-        digitalWrite(MOISTURE_POWER_PIN, LOW);
-        
-        Blynk.begin(auth, ssid, pass);
-      
-        // Setup a function to be called every second
-        timer.setInterval(1000L, myTimerEvent);
-
+  pinMode(MOISTURE_PIN, INPUT);
+  pinMode(MOISTURE_POWER_PIN, OUTPUT);
   
-    }
+  digitalWrite(MOISTURE_POWER_PIN, LOW);
   
-  
+  Blynk.begin(auth, ssid, pass);
+
+  // Setup a function to be called every second
+  timer.setInterval(1000L, myTimerEvent);
 }
 
 void loop()
