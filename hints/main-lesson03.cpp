@@ -12,8 +12,8 @@ int sensorValue = 0;
 void setup() {
   Serial.begin(115200);
 
+  // Sett MOISTURE_PIN i inputmodus
   pinMode(MOISTURE_PIN, INPUT);
-
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
 
