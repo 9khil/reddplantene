@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 	function getMoistureLevel(){
 		$.ajax({
-	  		url: ""})
+	  		url: "LEGG INN URL HER"})
 			.done(function(data) {
 			  	displayValue(data[0].moisture)
 			});
@@ -42,17 +42,14 @@ $(document).ready(function(){
 			if(value > 350){
 				valueElement.innerHTML = "våt";
 			}
-			else if(value <= 350 && value > 150){
+			else if(value <= 350 && value > 250){
 				valueElement.innerHTML = "fuktig";
-			}else if(value <= 150){
+			}else if(value <= 250){
 				valueElement.innerHTML = "tørr";
 			}
 
 			updateGauge(value);
 		}
-
-
-
 
 	function updateGauge(value){
 		
