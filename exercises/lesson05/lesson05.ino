@@ -1,9 +1,7 @@
+#include <WiFiManager.h>
 #include <ESP8266WiFi.h>
 #include <Phant.h>
 
-// Fyll ut med SSID og passord
-#define WIFI_SSID ""
-#define WIFI_PASSWORD ""
 
 //1.  Fyll ut phanthost, publickey og privatekey. Du finner disse verdiene ved å registrere deg her: http://phant.labben.org:8090
 const char PhantHost[] = "phant.labben.org";
@@ -20,20 +18,23 @@ int sensorValue = 0;
 
 void setup() {
   Serial.begin(115200);
+  WiFiManager wm;
+  bool res;
+  res = wm.autoConnect("ReddPlanteneDevice"); // password protected ap
+
+  if(!res) {
+      Serial.println("Failed to connect");
+      // ESP.restart();
+  } 
+  else {
+      //if you get here you have connected to the WiFi    
+      Serial.println("connected...yeey :)");
+  }
+
   pinMode(MOISTURE_PIN, INPUT);
 
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
   digitalWrite(MOISTURE_POWER_PIN, LOW);
-
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("connecting");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(500);
-  }
-  Serial.println();
-  Serial.print("connected: ");
-  Serial.println(WiFi.localIP());
 
 }
 
