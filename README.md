@@ -18,10 +18,17 @@ Hvis du har moistboard v1.x må du bruke koden fra release v1.0. Koden i masterb
 - USB-kabel
 - Div.
 
-# Credits
+# Setup
+
+Install VS Code: https://code.visualstudio.com/download
+
+And then add the PlatformIO-extension: https://platformio.org/install/ide?install=vscode
+
+![change lesson before upload](hints/vscodehint.png?raw=true)
+
+### Credits
 
 Oppgavene er basert på Daniel Holmens lignende kurs. 
 
-# Contact
-
+#### Contact
 Contact Nikhil André Luthra if you need to know anything :)
