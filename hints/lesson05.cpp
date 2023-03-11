@@ -32,8 +32,10 @@ void setup() {
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
   digitalWrite(MOISTURE_POWER_PIN, LOW);
 
-  WiFiManager wifiManager;
+  // Uncomment and run it once, if you want to erase all the stored information
+  //wifiManager.resetSettings();
   
+  WiFiManager wifiManager;
   if (wifiManager.autoConnect(deviceName)) {  // <--- NB! Husk å gi dingsen din et navn!
     Serial.println("Connected!");
   }
@@ -61,15 +63,19 @@ void loop() {
   // Legg til sensorverdien i Phantobjektet. Husk å bruke samme nøkkel som når du opprettet phant-stream
   phant.add("moisture", sensorValue);
 
-  // Koble til Phantserveren. Skriv ut feilmelding om tilkobling mislyktes
-  if (!client.connect(PhantHost, httpPort)) 
+  // Koble til Phant serveren vha klassen WifiClient
+  //  - skriv ut feilmelding om tilkobling mislyktes
+  //  - ellers, send data til phant serveren
+  WiFiClient client;
+  if (!client.connect(PhantHost, 8090)) 
   {
     // If we fail to connect, return 0.
     Serial.println("Error connecting to Phant.");
+  } 
+  else {
+    // Oppgave: Post data til Phant serveren
+    client.print(phant.post());
   }
-
-  // Post data til Phant serveren
-  client.print(phant.post());
 
   delay(15000);
 }

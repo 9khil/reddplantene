@@ -56,16 +56,13 @@ void loop() {
   digitalWrite(LED_BUILTIN, HIGH);
   
 
-  // Oppgave: Deklarer et Phantobjekt
-  
+  // Oppgave: Deklarer et Phant objekt
 
   // Oppgave: legg til sensorverdien i Phantobjektet. Husk å bruke nøkkel 'moisture' som når du opprettet phant-stream
-  
 
-  // Oppgave: koble til Phantserveren. Skriv ut feilmelding om tilkobling mislyktes
-  
-  
-  // Oppgave: Post data til Phant serveren
+  // Oppgave: Koble til Phant serveren vha klassen WifiClient
+  //  - skriv ut feilmelding om tilkobling mislyktes
+  //  - ellers, send data til phant serveren
 
 
   delay(15000);

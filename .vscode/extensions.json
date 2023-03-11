@@ -5,7 +5,7 @@
         "platformio.platformio-ide"
     ],
     "unwantedRecommendations": [
-        "ms-vscode.cpptools-extension-pack",
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack"
     ]
 }
