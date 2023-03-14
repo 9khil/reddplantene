@@ -1,11 +1,11 @@
+#include <Arduino.h>
 /* Redd Plantene
- * @author: Nikhil André Luthra - Bouvet Norge
+ * @author: Nikhil André Luthra/Jesper Andersson - Bouvet Norge
  * @web: reddplantene.labben.org / bouvet.no/reddplantene
  * @web: bouvet.no / nikhil.luthra.no
  */
 #define MOISTURE_PIN A0
 #define MOISTURE_POWER_PIN D7
-#define LED_PIN D2
 
 int sensorValue = 0;
 
@@ -14,21 +14,17 @@ void setup() {
 
   // Sett MOISTURE_PIN i inputmodus
   pinMode(MOISTURE_PIN, INPUT);
-
   pinMode(MOISTURE_POWER_PIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
-  
-  // Sett MOISTURE_POWER_PIN til LOW ved oppstart.
-  digitalWrite(MOISTURE_POWER_PIN, LOW);
-   digitalWrite(LED_PIN, LOW);
+  pinMode(LED_BUILTIN, OUTPUT);
 
-  delay(300);
+  // Sett MOISTURE_POWER_PIN til LOW ved oppstart.
+  digitalWrite(MOISTURE_POWER_PIN, LOW);  
+
+  delay(300);  
 }
 
 void loop() {
- 
   // Slå på sensoren
-  digitalWrite(LED_PIN, HIGH);
   digitalWrite(MOISTURE_POWER_PIN, HIGH);
   
   
@@ -39,13 +35,10 @@ void loop() {
   //slå av sensoren igjen
   delay(100);
   digitalWrite(MOISTURE_POWER_PIN, LOW);
-  digitalWrite(LED_PIN, LOW);
 
   Serial.print("Moisture: ");
-
-  // Skriv ut fuktighet til serieport
   Serial.println(sensorValue);
-
-  // Vent 2 sekunder
+  digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
   delay(2000);
 }
+
